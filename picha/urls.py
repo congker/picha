@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url,patterns,include
 from django.contrib import admin
-from picha.views import hello,my
+# from picha.views import hello,my
 
-urlpatterns =patterns('',
+urlpatterns =patterns('picha.views',
   # url(r'', include('picha.urls')),
    url(r'^admin/', admin.site.urls),
-   url(r'^demo/$',include('demo.urls')),
-  url('^$',my),
-   url('^hello/$',hello),
+   url(r'^demo/$', include('demo.urls')),
+   url('^$','my'),
+   url('^hello/$', 'hello'),
 )
 #urlpatterns +=patterns('',
 #    url('^hellow/$',hello),
